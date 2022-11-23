@@ -16,7 +16,7 @@ namespace bring
             sw1.Write("Qwertyuio qwertyu \n qwertyuiop asdjl Alkjsd.");
             sw1.Close();
             StreamWriter sw2 = new StreamWriter(path2);
-            sw2.Write("Zxz,cmnm,bnbvnfj \n asjdklasdjlkj \n asdhwadwakjdwha.");
+            sw2.Write("Zxz\n cmnm\n bnbvnfj \n asjdklasdjlkj \n asdhwadwakjdwha.");
             sw2.Close();
         }
 
@@ -57,10 +57,22 @@ namespace bring
         private void button4_Click(object sender, EventArgs e)
         {
             string filename = comboBox1.Text;
-            FileStream FS = File.OpenWrite(filename);
+            FileStream FS = File.OpenRead(@"C:\Users\User\Desktop\ayo.txt");
             byte[] mytext = new UTF8Encoding(true).GetBytes(textBox1.Text);
             FS.Write(mytext, 0, mytext.Length);
             FS.Close();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // ReadAllLines(String path), ReadAllLines(String path, Encoding)
+            // zaasan zam deerh Text file iig neegeed dotorh buh moruudiig unshsanii daraa file iig haadag.
+            // Unshsan moruudiig string array d hiij butsaadag.
+            // daraaching parameter deern file iig unshig Encoding iign zaaj ogch bolno.
+            string[] toPrint = File.ReadAllLines(path2);
+            foreach (var item in toPrint)
+            {
+                listBox1.Items.Add(item);
+            }
         }
     }
 }
