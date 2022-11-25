@@ -74,5 +74,31 @@ namespace bring
                 listBox1.Items.Add(item);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text.Trim() == "")
+            {
+                MessageBox.Show("text oruul");
+            }
+            else
+            {
+                StreamWriter sw = File.CreateText(path1);
+                try
+                {
+                    sw.Write(textBox2.Text);
+                    MessageBox.Show("written");
+                }
+                catch(Exception aldaa)
+                {
+                    MessageBox.Show("aldaa" + aldaa.Message);
+                }
+                finally
+                {
+                    sw.Close();
+                    textBox2.Clear();
+                }
+            }
+        }
     }
 }
