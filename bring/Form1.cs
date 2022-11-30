@@ -8,5 +8,11 @@ namespace bring
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Mainform myform = new Mainform();
+            myform.Show();
+        }
     }
 }
