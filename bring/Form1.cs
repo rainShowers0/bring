@@ -32,7 +32,6 @@
                         isMyUser = true;
                         Mainform myForm = new Mainform();
                         myForm.Show();
-                        this.Hide();
                     }
                 }
                 sr.Close();
